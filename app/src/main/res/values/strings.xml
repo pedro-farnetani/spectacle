@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Spectacle</string>
+    <string name="login_button">Entrar</string>
+    <string name="signup_button">Cadastrar</string>
+    <string name="password">Senha</string>
+    <string name="email">E-mail</string>
+    <string name="signup">Cadastro</string>
+    <string name="name">Nome</string>
+    <string name="full_name">Nome completo</string>
 </resources>
