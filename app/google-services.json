@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "719671406544",
+    "project_id": "spectacle-e2c3c",
+    "storage_bucket": "spectacle-e2c3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719671406544:android:cb802c50d20ba8be8f13d5",
+        "android_client_info": {
+          "package_name": "com.pedrofarnetani.spectacle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719671406544-828r8afqc6lkohvbeojvcenbhppqh5ff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvRTvpFgf0IdPXtc01L-IxNziCOQliOL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719671406544-828r8afqc6lkohvbeojvcenbhppqh5ff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
