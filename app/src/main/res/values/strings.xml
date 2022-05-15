@@ -8,4 +8,9 @@
     <string name="name">Nome</string>
     <string name="invalid_user">Não foi possível fazer o login. Verifique e-mail e senha.</string>
     <string name="signup_error">Não foi possível cadastrar o usuário.</string>
+    <string name="what_to_do">O que deseja fazer?</string>
+    <string name="musics">Músicas</string>
+    <string name="musics_description">Veja suas músicas disponíveis</string>
+    <string name="movies">Filmes</string>
+    <string name="movies_description">Veja seus filmes disponíveis</string>
 </resources>

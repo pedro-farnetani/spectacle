@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.pedrofarnetani.spectacle.R
 import com.pedrofarnetani.spectacle.databinding.FragmentLoginBinding
+import com.pedrofarnetani.spectacle.extensions.navigateSafe
 import com.pedrofarnetani.spectacle.extensions.observeActions
 import com.pedrofarnetani.spectacle.extensions.text
 import com.pedrofarnetani.spectacle.viewmodel.LoginViewModel
@@ -72,17 +73,12 @@ internal class LoginFragment : Fragment(R.layout.fragment_login) {
     private fun observeActions() {
         loginViewModel.action.observeActions<LoginFragmentAction>(this) { action ->
             when (action) {
-                LoginFragmentAction.NavigateToHomeScreen -> Toast.makeText(
-                    requireContext(),
-                    "Login com Sucesso",
-                    Toast.LENGTH_LONG
-                ).show()
-                LoginFragmentAction.NavigateToSignupScreen -> {
-                    loginViewModel.clearFields()
-                    findNavController().navigate(
-                        LoginFragmentDirections.actionLoginFragmentToSignUpFragment()
-                    )
-                }
+                LoginFragmentAction.NavigateToHomeScreen -> findNavController().navigateSafe(
+                    LoginFragmentDirections.actionLoginFragmentToSpectacleHomeFragment()
+                )
+                LoginFragmentAction.NavigateToSignupScreen -> findNavController().navigateSafe(
+                    LoginFragmentDirections.actionLoginFragmentToSignUpFragment()
+                )
             }
         }
     }

@@ -9,8 +9,10 @@ import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.pedrofarnetani.spectacle.R
 import com.pedrofarnetani.spectacle.databinding.FragmentSignUpBinding
+import com.pedrofarnetani.spectacle.extensions.navigateSafe
 import com.pedrofarnetani.spectacle.extensions.observeActions
 import com.pedrofarnetani.spectacle.extensions.text
 import com.pedrofarnetani.spectacle.viewmodel.LoginViewModel
@@ -73,13 +75,10 @@ internal class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     private fun observeActions() {
         loginViewModel.action.observeActions<SignUpFragmentAction>(this) { action ->
             when(action) {
-                SignUpFragmentAction.NavigateToHomeScreen -> Toast.makeText(requireContext(), "Usuário cadastrado com sucesso", Toast.LENGTH_LONG).show()
+                SignUpFragmentAction.NavigateToHomeScreen -> findNavController().navigateSafe(
+                    SignUpFragmentDirections.actionSignUpFragmentToSpectacleHomeFragment()
+                )
             }
         }
-    }
-
-    override fun onDestroy() {
-        loginViewModel.clearFields()
-        super.onDestroy()
     }
 }

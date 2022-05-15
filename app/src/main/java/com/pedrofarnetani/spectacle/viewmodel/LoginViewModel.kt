@@ -63,8 +63,6 @@ internal class LoginViewModel @Inject constructor(
         }
     }
 
-    fun clearFields() = setState { LoginState() }
-
     private fun setLoading(isLoading: Boolean) = setState { copy(isLoading = isLoading) }
 
     private fun setState(block: LoginState.() -> LoginState) {
