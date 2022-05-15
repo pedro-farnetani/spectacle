@@ -6,5 +6,6 @@
     <string name="email">E-mail</string>
     <string name="signup">Cadastro</string>
     <string name="name">Nome</string>
-    <string name="full_name">Nome completo</string>
+    <string name="invalid_user">Não foi possível fazer o login. Verifique e-mail e senha.</string>
+    <string name="signup_error">Não foi possível cadastrar o usuário.</string>
 </resources>

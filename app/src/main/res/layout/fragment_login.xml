@@ -51,4 +51,12 @@
         android:text="@string/signup_button"
         android:textColor="#FFFF" />
 
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>
