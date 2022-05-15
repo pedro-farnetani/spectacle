@@ -18,4 +18,5 @@
     <string name="add_new_music">Adicionar nova música</string>
     <string name="search_music_playlist">Procurar na Playlist</string>
     <string name="search_movie_my_list">Procurar em Meus Filmes</string>
+    <string name="spotify_connection_error">Não foi possível conectar ao Spotify. Tente novamente mais tarde.</string>
 </resources>

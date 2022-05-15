@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pedrofarnetani.spectacle">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".core.SpectacleApplication"
@@ -14,15 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Spectacle">
         <activity
-            android:name=".view.SpectacleActivity"
+            android:name=".view.SplashActivity"
             android:exported="true"
             android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.SpectacleActivity"
+            android:screenOrientation="locked" />
     </application>
 
 </manifest>
