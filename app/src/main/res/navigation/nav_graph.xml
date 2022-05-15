@@ -48,5 +48,60 @@
         android:id="@+id/spectacleHomeFragment"
         android:name="com.pedrofarnetani.spectacle.view.SpectacleHomeFragment"
         android:label="fragment_spectacle_home"
-        tools:layout="@layout/fragment_spectacle_home" />
+        tools:layout="@layout/fragment_spectacle_home">
+        <action
+            android:id="@+id/action_spectacleHomeFragment_to_playlistFragment"
+            app:destination="@id/playlistFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_spectacleHomeFragment_to_myMoviesFragment"
+            app:destination="@id/myMoviesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/playlistFragment"
+        android:name="com.pedrofarnetani.spectacle.view.music.PlaylistFragment"
+        android:label="fragment_playlist"
+        tools:layout="@layout/fragment_playlist">
+        <action
+            android:id="@+id/action_playlistFragment_to_musicsFragment"
+            app:destination="@id/musicsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/musicsFragment"
+        android:name="com.pedrofarnetani.spectacle.view.music.MusicsFragment"
+        android:label="fragment_musics"
+        tools:layout="@layout/fragment_musics" />
+
+    <fragment
+        android:id="@+id/myMoviesFragment"
+        android:name="com.pedrofarnetani.spectacle.view.movie.MyMoviesFragment"
+        android:label="fragment_my_movies"
+        tools:layout="@layout/fragment_my_movies">
+        <action
+            android:id="@+id/action_myMoviesFragment_to_moviesFragment"
+            app:destination="@id/moviesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.pedrofarnetani.spectacle.view.movie.MoviesFragment"
+        android:label="fragment_movies"
+        tools:layout="@layout/fragment_movies" />
 </navigation>
