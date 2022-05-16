@@ -86,6 +86,7 @@ internal class MusicViewModel @Inject constructor(
         firebaseRepository.saveFavoriteMusic(music).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 storedPlayList.add(music)
+                setState { copy(musicAdded = music) }
                 _playlist.value = storedPlayList
             }
         }
@@ -97,6 +98,7 @@ internal class MusicViewModel @Inject constructor(
             firebaseRepository.deleteMusicFromPlaylist(id).addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     storedPlayList.remove(music)
+                    setState { copy(musicRemoved = music) }
                     _playlist.value = storedPlayList
                 }
             }
@@ -116,6 +118,10 @@ internal class MusicViewModel @Inject constructor(
             _musicList.value = newMusicList
         }
     }
+
+    fun onMusicAdded() = setState { copy(musicAdded = null) }
+
+    fun onMusicRemoved() = setState { copy(musicRemoved = null) }
 
     private fun setState(block: MusicState.() -> MusicState) {
         _state.value = _state.value!!.block()

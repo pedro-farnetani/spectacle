@@ -19,4 +19,7 @@
     <string name="search_music_playlist">Procurar na Playlist</string>
     <string name="search_movie_my_list">Procurar em Meus Filmes</string>
     <string name="spotify_connection_error">Não foi possível conectar ao Spotify. Tente novamente mais tarde.</string>
+    <string name="remember_me">Lembrar de mim</string>
+    <string name="music_was_added">A música %s foi adicionada a playlist</string>
+    <string name="music_was_removed">A música %s foi removida da playlist</string>
 </resources>

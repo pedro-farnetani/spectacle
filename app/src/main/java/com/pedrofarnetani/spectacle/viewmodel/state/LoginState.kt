@@ -5,5 +5,6 @@ internal data class LoginState(
     val email: String = "",
     val password: String = "",
     val isLoginError: Boolean = false,
-    val isSignUpError: Boolean = false
+    val isSignUpError: Boolean = false,
+    val hasUserStored: Boolean = false
 )

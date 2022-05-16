@@ -46,7 +46,7 @@ internal class LoginFragment : Fragment(R.layout.fragment_login) {
     private fun setupListeners() = with(binding) {
         emailEditText.addTextChangedListener { loginViewModel.onEmailChanged(it.text) }
         passwordEditText.addTextChangedListener { loginViewModel.onPasswordChanged(it.text) }
-        loginButton.setOnClickListener { loginViewModel.onLoginButtonClicked() }
+        loginButton.setOnClickListener { loginViewModel.onLoginButtonClicked(rememberCheckBox.isChecked) }
         signupButton.setOnClickListener { loginViewModel.goToSignUpScreen() }
     }
 
@@ -59,6 +59,12 @@ internal class LoginFragment : Fragment(R.layout.fragment_login) {
                 showLoading(false)
                 Toast.makeText(requireContext(), getString(R.string.invalid_user), Toast.LENGTH_LONG).show()
             }
+            if (state.hasUserStored) {
+                binding.emailEditText.setText(state.email)
+                binding.passwordEditText.setText(state.password)
+                binding.rememberCheckBox.isChecked = true
+                loginViewModel.onUserRecovered()
+            }
         }
     }
 
@@ -67,6 +73,7 @@ internal class LoginFragment : Fragment(R.layout.fragment_login) {
         passwordEditText.isVisible = !isLoading
         loginButton.isVisible = !isLoading
         signupButton.isVisible = !isLoading
+        rememberCheckBox.isVisible = !isLoading
         loadingProgressBar.isVisible = isLoading
     }
 

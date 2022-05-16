@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -70,6 +71,15 @@ internal class MusicsFragment : Fragment(R.layout.fragment_musics) {
             musicSearchView.isVisible = !state.isLoadingMusics
             musicsRecyclerView.isVisible = !state.isLoadingMusics
             loadingMusicsProgressBar.isVisible = state.isLoadingMusics
+
+            if (state.musicAdded != null) {
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.music_was_added, state.musicAdded.API),
+                    Toast.LENGTH_SHORT
+                ).show()
+                musicViewModel.onMusicAdded()
+            }
         }
         musicViewModel.musicList.observe(viewLifecycleOwner) { musicList ->
             musicAdapter.submitList(musicList)

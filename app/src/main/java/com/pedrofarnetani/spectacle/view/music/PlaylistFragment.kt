@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -70,6 +71,14 @@ internal class PlaylistFragment : Fragment(R.layout.fragment_playlist) {
     private fun observers() {
         musicViewModel.state.observe(viewLifecycleOwner) { state ->
             showLoading(state.isLoadingPlaylist)
+            if (state.musicRemoved != null) {
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.music_was_removed, state.musicRemoved.API),
+                    Toast.LENGTH_SHORT
+                ).show()
+                musicViewModel.onMusicRemoved()
+            }
         }
         musicViewModel.playlist.observe(viewLifecycleOwner) { musicList ->
             musicAdapter.submitList(musicList)
