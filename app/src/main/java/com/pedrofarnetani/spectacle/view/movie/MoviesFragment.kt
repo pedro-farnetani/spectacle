@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.pedrofarnetani.spectacle.R
 import com.pedrofarnetani.spectacle.databinding.FragmentMoviesBinding
 
@@ -18,5 +19,15 @@ internal class MoviesFragment : Fragment(R.layout.fragment_movies) {
     ): View {
         binding = FragmentMoviesBinding.inflate(layoutInflater)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        insertListeners()
+    }
+
+    private fun insertListeners() = with(binding) {
+        toolbar.setNavigationOnClickListener { findNavController().navigateUp() }
     }
 }

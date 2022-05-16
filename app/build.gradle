@@ -60,6 +60,7 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:30.0.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
 
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.4.2")
@@ -72,6 +73,11 @@ dependencies {
     // Spotify
     implementation files('libs/spotify-app-remote/app-remote-lib/spotify-app-remote-release-0.7.2.aar')
     implementation files('libs/spotify-app-remote/auth-lib/spotify-auth-release-1.2.3.aar')
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
 
     implementation "com.google.code.gson:gson:2.8.9"
 
